@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scarborough Shoaldown</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="module" src = "script.js"></script>
+</head>
+<body id = "background">
+    <div class = "whole">
+        <div class = "game-container">
+            <canvas id="Scarborough" width="500" height="500"></canvas>
+        </div>
+        <div class = "shop" id = "shop">
+            <div id = "turn">Human's Turn</div>
+            
+            <div>Resources left: 
+                <span id = "oils"></span>
+                <span>🌢</span>
+            </div>
+
+            <button id = "EndTurn">End Turn</button>
+            <div id="boats">
+
+                <div class="boat">
+                    <img src="assets/coast_guard.png" class="boatimg">
+                    <div class="boatinfo">
+                        COAST GUARD <br>
+                        <span class = "info">Cost: 2 🌢</span><br>
+                        <span class = "info">Attack: 2</span><br>
+                        <span class = "info">Health: 4</span><br>
+                        <span class = "info">Speed: 3</span><br>
+                        <span class = "info">Range: 2</span><br>
+                        <button class = "buy" id = "coast_guard">Buy</button>
+                    </div>
+                </div>
+
+                <div class="boat">
+                    <img src="assets/speed_boat.png" class="boatimg">
+                    <div class="boatinfo">
+                        SPEED BOAT <br>
+                        <span class = "info">Cost: 3 🌢</span><br>
+                        <span class = "info">Attack: 1</span><br>
+                        <span class = "info">Health: 3</span><br>
+                        <span class = "info">Speed: 4</span><br>
+                        <span class = "info">Range: 1</span><br>
+                        <button class = "buy" id = "speed_boat">Buy</button>
+                    </div>
+                </div>
+
+                <div class="boat">
+                    <img src="assets/canon_boat.png" class="boatimg">
+                    <div class="boatinfo">
+                        CANNON BOAT <br>
+                        <span class = "info">Cost: 5 🌢</span><br>
+                        <span class = "info">Attack: 3</span><br>
+                        <span class = "info">Health: 3</span><br>
+                        <span class = "info">Speed: 2</span><br>
+                        <span class = "info">Range: 3</span><br>
+                        <button class = "buy" id = "canon_boat">Buy</button>
+                    </div>
+                </div>
+
+                <div class="boat">
+                    <img src="assets/armored_ship.png" class="boatimg">
+                    <div class="boatinfo">
+                        ARMORED SHIP <br>
+                        <span class = "info">Cost: 8 🌢</span><br>
+                        <span class = "info">Attack: 1</span><br>
+                        <span class = "info">Health: 15</span><br>
+                        <span class = "info">Speed: 2</span><br>
+                        <span class = "info">Range: 1</span><br>
+                        <span class = "special">Ramming
+                            <span class="tooltip">All enemies 1 unit around this ship experiences 1 damage per turn.</span>
+                        </span><br>
+                        <button class = "buy" id = "armored_ship">Buy</button>
+                    </div>
+                </div>
+
+                <div class="boat">
+                    <img src="assets/submarine.png" class="boatimg">
+                    <div class="boatinfo">
+                        SUBMARINE <br>
+                        <span class = "info">Cost: 12 🌢</span><br>
+                        <span class = "info">Attack: 5</span><br>
+                        <span class = "info">Health: 3</span><br>
+                        <span class = "info">Speed: 3</span><br>
+                        <span class = "info">Range: 2</span><br>
+                        <span class = "special">Submerged
+                            <span class="tooltip">Not visible to the enemy. Emerges only if attacking.</span>
+                        </span><br>
+                        <button class = "buy" id = "submarine">Buy</button>
+                    </div>
+                </div>
+               
+                <div class="boat">
+                    <img src="assets/aircraft_carrier.png" class="boatimg">
+                    <div class="boatinfo">
+                        AIRCRAFT CARRIER <br>
+                        <span class = "info">Cost: 20 🌢</span><br>
+                        <span class = "info">Attack: 6</span><br>
+                        <span class = "info">Health: 8</span><br>
+                        <span class = "info">Speed: 1</span><br>
+                        <span class = "info">Range: 8</span><br>
+                        <span class = "special">Dormancy
+                            <span class="tooltip">Can only attack after every 3 turns.</span>
+                        </span><br>
+                        <button class = "buy" id = "aircraft_carrier">Buy</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
