@@ -72,8 +72,8 @@ island.onload = function() {
 }
 
 // INITIALIZE THE OILER BOATS
-// const humanColumn = Math.floor(Math.random() * 10);
-const humanColumn = 5;
+const humanColumn = Math.floor(Math.random() * 10);
+// const humanColumn = 5;
 human.boats.push(new Boat("oiler", "human", humanColumn, 8));
 map[humanColumn][8].boat = human.boats[0];
 human.boats[0].action = true;
@@ -86,8 +86,8 @@ for(let i = 7; i <= 9; i++){
     }
 }
 
-// const computerColumn = Math.floor(Math.random() * 10);
-const computerColumn = 4;
+const computerColumn = Math.floor(Math.random() * 10);
+// const computerColumn = 4;
 computer.boats.push(new Boat("oiler", "computer", computerColumn, 1));
 map[computerColumn][1].boat = computer.boats[0];
 computer.boats[0].action = true;
@@ -131,15 +131,18 @@ canvas.addEventListener('click', function(event) {
                                 }
                             }
                         }
+
+
+                        human.boats[0].action = false;
+                        placingBoat = false;
+                        spawningBoat = null;
+                        selectedBoat = null;
+                        updateMap();
+                    }else{
+                        alert("Invalid Placement: Place the boat around the oiler");
                     }
-                    
-                    human.boats[0].action = false;
-                    placingBoat = false;
-                    spawningBoat = null;
-                    selectedBoat = null;
-                    updateMap();
                 }else{
-                    alert("Invalid placement");
+                    alert("Invalid Placement: Cannot place boat on island or another boat");
                 }
             }else if(map[i][j].boat !== null && map[i][j].boat.side === "human"){
                 // Player select the boat
@@ -225,15 +228,17 @@ canvas.addEventListener('click', function(event) {
                                 }
                             }
                         }
+
+                        computer.boats[0].action = false;
+                        placingBoat = false;
+                        spawningBoat = null;
+                        selectedBoat = null;
+                        updateMap();
+                    }else{
+                        alert("Invalid Placement: Place the boat around the oiler");
                     }
-                    
-                    computer.boats[0].action = false;
-                    placingBoat = false;
-                    spawningBoat = null;
-                    selectedBoat = null;
-                    updateMap();
                 }else{
-                    alert("Invalid placement");
+                    alert("Invalid Placement: Cannot place boat on island or another boat");
                 }
             }else if(map[i][j].boat !== null && map[i][j].boat.side === "computer"){
                 // Player select the boat
@@ -309,6 +314,7 @@ canvas.addEventListener('click', function(event) {
 });
 
 function markSurrondingTiles(x, y){
+    updateMap();
     for(let i = x - selectedBoat.speed; i <= x + selectedBoat.speed; i++){
         for(let j = y - selectedBoat.speed; j <= y + selectedBoat.speed; j++){
             if(i >= 0 && i < 10 && j >= 0 && j < 10){
